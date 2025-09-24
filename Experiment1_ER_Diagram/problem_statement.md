@@ -1,4 +1,4 @@
-# ER Diagram Workshop – Submission Template
+[er diagram.pdf](https://github.com/user-attachments/files/22511027/er.diagram.pdf)# ER Diagram Workshop – Submission Template
 
 ## Objective
 To understand and apply ER modeling concepts by creating ER diagrams for real-world applications.
@@ -107,7 +107,8 @@ A popular restaurant wants to manage reservations, orders, and billing.
 
 ### ER Diagram:
 *Paste or attach your diagram here*  
-![ER Diagram](er_diagram_restaurant.png)
+[Uploadin[Uploading Home - Shortcut.lnk…]()g er diagram.pdf…]()
+
 
 ### Entities and Attributes
 
