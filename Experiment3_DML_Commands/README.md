@@ -1,7 +1,5 @@
 # Experiment 3: DML Commands
 
-
-
 ## AIM
 To study and implement DML (Data Manipulation Language) commands.
 
@@ -49,164 +47,170 @@ SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
 
-![image](https://github.com/user-attachments/assets/3fb5b196-fd57-4e9c-8d03-4e445dacb453)
+Write a SQL statement to Update the address to '58 Lakeview, Magnolia' where supplier ID is 5 in the suppliers table.
+<img width="896" height="445" alt="Screenshot 2025-10-17 103021" src="https://github.com/user-attachments/assets/a5de95d6-5f9d-47b4-a54b-9d75ea444205" />
 
 
 ```sql
-UPDATE products
-SET product_name = 'Grapefruit'
-WHERE product_id = 4;
+UPDATE suppliers
+SET address='58 Lakeview, Magnolia'
+WHERE supplier_id=5;
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/450e752a-8c92-4174-94ef-f60a21dce154)
+<img width="1345" height="165" alt="Screenshot 2025-10-17 103343" src="https://github.com/user-attachments/assets/f17574d5-82a3-4719-84e5-c5f6bd88e190" />
 
 
 **Question 2**
 
-![image](https://github.com/user-attachments/assets/58478acf-17ff-41bf-805b-a990e525e4a8)
+Write a SQL statement to Update the grade of all customers in Chennai city as  5. 
+
+
+<img width="707" height="77" alt="Screenshot 2025-10-17 103936" src="https://github.com/user-attachments/assets/845788be-ff27-48cc-9094-77692d1d2e41" />
 
 
 ```sql
-UPDATE employees
-SET salary = salary * 2
-WHERE department_id = 20
-  AND job_id LIKE '%MAN';
+UPDATE Customer
+SET grade=5
+WHERE city='Chennai';
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/cd7d0fc7-ea44-4d43-aae0-0d8f5c592dde)
+<img width="1271" height="350" alt="Screenshot 2025-10-17 104039" src="https://github.com/user-attachments/assets/f4bba189-2a4e-4dae-97b0-3ac7676b2ecb" />
 
 **Question 3**
 
-![image](https://github.com/user-attachments/assets/a5cc9cd3-1df5-443d-b76b-55953b47d747)
+Write a SQL statement to change salary of employee to 8000 whose Employee ID is 105, if the existing salary is less than 5000.
+
+<img width="1067" height="481" alt="Screenshot 2025-10-17 104212" src="https://github.com/user-attachments/assets/10697f42-8dfa-467d-8c6d-0d3dd20fdd0c" />
 
 
 ```sql
-UPDATE SALES
-SET sell_price = sell_price + 3
-WHERE product_id IN (
-    SELECT product_id 
-    FROM PRODUCTS 
-    WHERE supplier_id = 4
-);
+UPDATE Employees
+SET salary=8000
+WHERE employee_id=105 AND salary<5000;
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/4154d858-e973-4537-aa69-9f77dcad49e9)
-
+<img width="1260" height="143" alt="Screenshot 2025-10-17 104305" src="https://github.com/user-attachments/assets/ac34be38-b98c-49cd-828e-104d2dba4529" />
 
 **Question 4**
 
-![image](https://github.com/user-attachments/assets/aa005081-072e-4412-8adb-6f500afeb345)
+Write a SQL statement to double the availability of the product with product_id 1.
+
+<img width="708" height="212" alt="Screenshot 2025-10-17 104350" src="https://github.com/user-attachments/assets/1f72e0ea-37bb-4b09-b8cc-df285ab36171" />
 
 
 ```sql
-UPDATE sales
-SET total_sell_price = quantity * sell_price
-WHERE product_id = 10;
+UPDATE products
+SET availability=availability*2
+WHERE product_id=1;
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/a8ddecbd-e86a-480f-b302-3c8e0bdec3a5)
+<img width="1185" height="193" alt="Screenshot 2025-10-17 104520" src="https://github.com/user-attachments/assets/e24ff502-9503-4343-8da0-3792ecbda71a" />
+
 
 
 **Question 5**
 
-![image](https://github.com/user-attachments/assets/4851b1e3-8122-4449-85f2-a87cf346ca0a)
+Write a SQL statement to Update the reorder level to 20 where the quantity in stock is less than 10 and product category is 'Snacks' in the products table.
+
+<img width="1167" height="426" alt="Screenshot 2025-10-17 104624" src="https://github.com/user-attachments/assets/c2a661ca-84cb-4196-8c08-7e4150b454e6" />
 
 
 ```sql
-UPDATE employees
-SET email = 'Unavailable';
+UPDATE products
+SET reorder_lvl=20
+WHERE quantity<10 AND category='Snacks';
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/61fe882b-be3b-4d18-9d74-055e18806cbe)
+<img width="1206" height="274" alt="Screenshot 2025-10-17 104726" src="https://github.com/user-attachments/assets/ccc269c2-9461-43a0-91e4-4bb1c3048265" />
 
 
 **Question 6**
 
-![image](https://github.com/user-attachments/assets/cf249de4-51d1-4571-b684-3cbcabf18f1e)
+Write a SQL query to Delete customers from 'customer' table where 'GRADE' is odd.
+
+<img width="1026" height="319" alt="Screenshot 2025-10-17 104831" src="https://github.com/user-attachments/assets/37ebc924-818a-4e1b-9725-473a6698c7a5" />
 
 
 ```sql
-DELETE FROM customer
-WHERE GRADE = 2;
+DELETE FROM customer WHERE GRADE%2!=0
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/b3b16aa3-a2d2-4974-9955-ed1a57cd9156)
+<img width="1884" height="261" alt="Screenshot 2025-10-17 104942" src="https://github.com/user-attachments/assets/ae6633ec-3acb-424b-9a60-03086206e1c2" />
+
 
 **Question 7**
 
-![image](https://github.com/user-attachments/assets/4065dd95-30d9-43f4-a790-ff72adce9e33)
+Write a SQL query to Delete All Doctors with a NULL Last Name
+
+<img width="811" height="544" alt="Screenshot 2025-10-17 105044" src="https://github.com/user-attachments/assets/cc0d5233-3ac0-44eb-be0b-dd6aa5d10ae0" />
 
 
 ```sql
-DELETE FROM customer
-WHERE CUST_COUNTRY NOT IN ('India', 'USA');
+DELETE FROM doctors WHERE last_name is NULL;
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/f4560ca2-1fbc-476d-b647-33d71db7d372)
+<img width="1154" height="644" alt="Screenshot 2025-10-17 105131" src="https://github.com/user-attachments/assets/6eecb09d-add4-411c-82ea-afd4a7c687ac" />
 
 
 **Question 8**
 
-![image](https://github.com/user-attachments/assets/7f7a74a1-870f-4a1f-8b31-df3bc457e045)
+Write a SQL query to Delete All Doctors whose ID ranges from 2 to 4.
 
+<img width="685" height="415" alt="Screenshot 2025-10-17 105208" src="https://github.com/user-attachments/assets/5083683c-c44f-4b25-b929-e34f69445b54" />
 
 ```sql
-DELETE FROM customer
-WHERE GRADE >= 2;
+DELETE FROM doctors WHERE doctor_id BETWEEN 2 AND 4;
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/1e0da64d-81c1-4493-aed7-9e30ea6eef28)
+<img width="1183" height="754" alt="Screenshot 2025-10-17 105254" src="https://github.com/user-attachments/assets/adfe6092-eef8-4637-b868-246962395ba9" />
 
 
 **Question 9**
 
-![image](https://github.com/user-attachments/assets/6582b276-3672-4426-b317-7549c9b32a9d)
+Write a SQL query to Delete a Specific Surgery whose ID is 3 or surgeon ID is 4.
+
+<img width="806" height="580" alt="Screenshot 2025-10-17 105332" src="https://github.com/user-attachments/assets/72fee2ab-be83-408d-ad87-bb94a2f162ec" />
 
 
 ```sql
-DELETE FROM Doctors
-WHERE specialization = 'Pediatrics'
-  AND first_name = 'Michael';
+DELETE FROM surgeries WHERE surgery_id=3 OR surgeon_id=4;
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/2d9ca326-978a-42e2-a707-7b52de0a1324)
+<img width="1159" height="810" alt="Screenshot 2025-10-17 105425" src="https://github.com/user-attachments/assets/261234ad-6f80-4111-afff-e347385f621a" />
+
 
 **Question 10**
 
-![image](https://github.com/user-attachments/assets/5cdc5453-a0c6-4290-b442-dffb772c27e9)
+Write a SQL query to Delete customers from 'customer' table where 'CUST_CITY' is not 'New York' and 'OUTSTANDING_AMT' is greater than 5000
+
+<img width="1242" height="372" alt="Screenshot 2025-10-17 105520" src="https://github.com/user-attachments/assets/61003f1b-cd93-448b-bb62-bf1c67c4b13a" />
 
 
 ```sql
-DELETE FROM customer
-WHERE AGENT_CODE IN ('A003', 'A008');
+DELETE FROM customer WHERE CUST_CITY!='New York'AND OUTSTANDING_AMT>5000;
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/46f39bd1-21b8-4724-b47b-53099e272de6)
-
-## GRADE
-
-<img width="1367" height="78" alt="image" src="https://github.com/user-attachments/assets/a6857546-979c-47c5-8980-1f95e6345155" />
-
+<img width="1722" height="324" alt="Screenshot 2025-10-17 105647" src="https://github.com/user-attachments/assets/4773466e-8c2d-4561-8edb-2d342a01a023" />
 
 
 ## RESULT
